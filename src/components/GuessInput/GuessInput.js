@@ -23,8 +23,8 @@ function GuessInput({ handleSaveGuess }) {
         type="text"
         required
         value={guess}
-        minlength={5}
-        maxlength={5}
+        minLength={5}
+        maxLength={5}
         pattern="[A-Z]{5}"
         title="5 letter word"
         onChange={(event) => setGuess(formatGuess(event.target.value))}

@@ -1,6 +1,7 @@
 import React from 'react';
+import { Status } from '../../constants';
 
-function GuessInput({ handleSaveGuess }) {
+function GuessInput({ handleSaveGuess, gameStatus }) {
   const [guess, setGuess] = React.useState('');
 
   function formatGuess(guess) {
@@ -28,6 +29,7 @@ function GuessInput({ handleSaveGuess }) {
         pattern="[A-Z]{5}"
         title="5 letter word"
         onChange={(event) => setGuess(formatGuess(event.target.value))}
+        disabled={gameStatus !== Status.RUNNING}
       />
     </form>
   );
